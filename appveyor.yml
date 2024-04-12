@@ -9,8 +9,6 @@ environment:
     - nodejs_version: "14"
     - nodejs_version: "18"
     - nodejs_version: "Stable"
-  GITHUB_TOKEN:
-    secure: TOKEN
 
 cache:
   - node_modules
