@@ -34,22 +34,22 @@
     "learning",
     "color"
   ],
-  "author": "Jason Stallings",
+  "author": "Yunsung Cho",
   "license": "MIT",
   "gypfile": true,
   "bugs": {
-    "url": "https://github.com/octalmage/robotjs/issues"
+    "url": "https://github.com/choyunsung/robotjs"
   },
-  "homepage": "https://github.com/octalmage/robotjs",
+  "homepage": "https://github.com/choyunsung/robotjs",
   "dependencies": {
-    "nan": "^2.14.2",
-    "prebuild-install": "^7.1.2"
+    "nan": "github:choyunsung/nan",
+    "prebuild-install": "github:choyunsung/prebuild-install"
   },
   "devDependencies": {
     "tape": "^4.8.0",
-    "jasmine": "^2.99.0",
-    "prebuild": "^9.1.1",
+    "prebuild": "^13.0.0",
     "run-script-os": "^1.0.3",
-    "targetpractice": "0.0.7"
+    "@hmodarres/targetpractice": "0.0.7",
+    "jasmine": "^2.99.0"
   }
 }
