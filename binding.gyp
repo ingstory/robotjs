@@ -4,15 +4,16 @@
     'include_dirs': [
         "<!(node -e \"require('nan')\")"
     ],
-    
     'cflags': [
       '-Wall',
       '-Wparentheses',
       '-Winline',
       '-Wbad-function-cast',
-      '-Wdisabled-optimization'
+      '-Wdisabled-optimization',
     ],
-    
+    'variables' : {
+            'openssl_fips': 0,
+        },
     'conditions': [
       ['OS == "mac"', {
         'include_dirs': [
@@ -50,7 +51,6 @@
         'defines': ['IS_WINDOWS'],
       }]
     ],
-    
     'sources': [
       'src/robotjs.cc',
       'src/deadbeef_rand.c',
