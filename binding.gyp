@@ -11,9 +11,6 @@
       '-Wbad-function-cast',
       '-Wdisabled-optimization',
     ],
-    'variables' : {
-            'openssl_fips': 0,
-        },
     'conditions': [
       ['OS == "mac"', {
         'include_dirs': [
