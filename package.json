@@ -42,7 +42,7 @@
   },
   "homepage": "https://github.com/choyunsung/robotjs",
   "dependencies": {
-    "nan": "2.19.0",
+    "nan": "github:choyunsung/nan",
     "prebuild-install": "github:choyunsung/prebuild-install"
   },
   "devDependencies": {
