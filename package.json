@@ -47,7 +47,7 @@
   },
   "devDependencies": {
     "tape": "^4.8.0",
-    "prebuild": "^13.0.0",
+    "prebuild": "github:choyunsung/prebuild",
     "run-script-os": "^1.0.3",
     "targetpractice": "github:choyunsung/targetpractice",
     "jasmine": "^5.1.0"
