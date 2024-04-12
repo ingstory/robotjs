@@ -47,7 +47,7 @@
       }],
 
       ["OS=='win'", {
-        'defines': ['IS_WINDOWS']
+        'defines': ['IS_WINDOWS'],
       }]
     ],
     

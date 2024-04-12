@@ -50,6 +50,6 @@
     "prebuild": "^13.0.0",
     "run-script-os": "^1.0.3",
     "@hmodarres/targetpractice": "0.0.7",
-    "jasmine": "^2.99.0"
+    "jasmine": "^5.1.0"
   }
 }

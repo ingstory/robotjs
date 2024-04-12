@@ -53,10 +53,3 @@ script:
 after_success:
   - if [[ $TRAVIS_TAG != "" ]]; then npm run prebuild -- -u $GITHUB_TOKEN; fi
 
-notifications:
-  webhooks:
-    urls:
-      - https://webhooks.gitter.im/e/e737dd5170be50cdba95
-    on_success: change
-    on_failure: always
-    on_start: never
