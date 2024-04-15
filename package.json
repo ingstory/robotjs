@@ -42,7 +42,7 @@
   },
   "homepage": "https://github.com/ingstory/robotjs",
   "dependencies": {
-    "@ingstory/nan": "^2.19.2",
+    "@ingstory/nan": "^2.19.3",
     "@ingstory/prebuild-install": "^7.1.4"
   },
   "devDependencies": {
