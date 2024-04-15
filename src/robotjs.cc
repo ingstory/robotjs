@@ -156,7 +156,14 @@ NAN_METHOD(mouseClick)
 
 	if (info.Length() > 0)
 	{
-		v8::String::Utf8Value bstr(v8::Isolate::GetCurrent(), Nan::To<v8::String>(info[0]).ToLocalChecked());
+        #if NODE_MAJOR_VERSION >= 12
+            v8::Isolate* isolate = v8::Isolate::GetCurrent();
+            v8::Local<v8::String> str = Nan::To<v8::String>(info[0]).ToLocalChecked();
+            v8::String::Utf8Value bstr(isolate, str);
+        #else
+		    v8::String::Utf8Value bstr(Nan::To<v8::String>(info[0]).ToLocalChecked());
+		#endif
+
 		const char * const b = *bstr;
 
 		switch (CheckMouseButton(b, &button))
@@ -444,7 +451,11 @@ int CheckKeyFlags(char* f, MMKeyFlags* flags)
 
 int GetFlagsFromString(v8::Local<v8::Value> value, MMKeyFlags* flags)
 {
-	v8::String::Utf8Value fstr(v8::Isolate::GetCurrent(), Nan::To<v8::String>(value).ToLocalChecked());
+    #if NODE_MAJOR_VERSION >= 12
+        v8::String::Utf8Value fstr(v8::Isolate::GetCurrent(), Nan::To<v8::String>(value).ToLocalChecked());
+    #else
+	    v8::String::Utf8Value fstr(Nan::To<v8::String>(value).ToLocalChecked());
+	#endif
 	return CheckKeyFlags(*fstr, flags);
 }
 
@@ -483,7 +494,11 @@ NAN_METHOD(keyTap)
 
 	char *k;
 
-	v8::String::Utf8Value kstr(v8::Isolate::GetCurrent(), Nan::To<v8::String>(info[0]).ToLocalChecked());
+    #if NODE_MAJOR_VERSION >= 12
+	    v8::String::Utf8Value kstr(v8::Isolate::GetCurrent(), Nan::To<v8::String>(info[0]).ToLocalChecked());
+	#else
+	    v8::String::Utf8Value kstr(Nan::To<v8::String>(info[0]).ToLocalChecked());
+    #endif
 	k = *kstr;
 
 	switch (info.Length())
