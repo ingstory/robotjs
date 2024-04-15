@@ -19,6 +19,7 @@
   },
   "author": "ingstory",
   "license": "MIT",
+  "private": false,
   "keywords": [
     "Automation",
     "GUI",
