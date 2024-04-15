@@ -42,8 +42,8 @@
   },
   "homepage": "https://github.com/ingstory/robotjs",
   "dependencies": {
-    "@ingstory/nan": "^2.19.1",
-    "@ingstory/prebuild-install": "^7.1.3"
+    "@ingstory/nan": "^2.19.2",
+    "@ingstory/prebuild-install": "^7.1.4"
   },
   "devDependencies": {
     "tape": "^4.8.0",
