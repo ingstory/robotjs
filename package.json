@@ -1,5 +1,5 @@
 {
-  "name": "robotjs",
+  "name": "@ingstory/robotjs",
   "version": "0.6.1",
   "description": "Node.js Desktop Automation.",
   "main": "index.js",
@@ -15,8 +15,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/choyunsung/robotjs.git"
+    "url": "git+https://github.com/ingstory/robotjs.git"
   },
+  "author": "ingstory",
+  "license": "MIT",
   "keywords": [
     "Automation",
     "GUI",
@@ -34,13 +36,11 @@
     "learning",
     "color"
   ],
-  "author": "Yunsung Cho",
-  "license": "MIT",
   "gypfile": true,
   "bugs": {
-    "url": "https://github.com/choyunsung/robotjs"
+    "url": "https://github.com/ingstory/robotjs/issues"
   },
-  "homepage": "https://github.com/choyunsung/robotjs",
+  "homepage": "https://github.com/ingstory/robotjs",
   "dependencies": {
     "nan": "github:choyunsung/nan",
     "prebuild-install": "github:choyunsung/prebuild-install"
