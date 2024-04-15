@@ -15,11 +15,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ingstory/robotjs.git"
+    "url": "https://github.com/ingstory/robotjs.git"
   },
-  "author": "ingstory",
-  "license": "MIT",
-  "private": false,
   "keywords": [
     "Automation",
     "GUI",
@@ -37,20 +34,22 @@
     "learning",
     "color"
   ],
+  "author": "ingstory",
+  "license": "MIT",
   "gypfile": true,
   "bugs": {
-    "url": "https://github.com/ingstory/robotjs/issues"
+    "url": "https://github.com/ingstory/robotjs"
   },
   "homepage": "https://github.com/ingstory/robotjs",
   "dependencies": {
-    "nan": "github:choyunsung/nan",
-    "prebuild-install": "github:choyunsung/prebuild-install"
+    "@ingstory/nan": "^2.19.1",
+    "@ingstory/prebuild-install": "^7.1.3"
   },
   "devDependencies": {
     "tape": "^4.8.0",
-    "prebuild": "github:choyunsung/prebuild",
+    "@ingstory/prebuild": "^13.0.0",
     "run-script-os": "^1.0.3",
-    "targetpractice": "github:choyunsung/targetpractice",
+    "@ingstory/targetpractice": "0.0.7",
     "jasmine": "^5.1.0"
   }
 }

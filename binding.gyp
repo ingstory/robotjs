@@ -2,7 +2,7 @@
   'targets': [{
     'target_name': 'robotjs',
     'include_dirs': [
-        "<!(node -e \"require('nan')\")"
+        "<!(node -e \"require('@ingstory/nan')\")"
     ],
     'cflags': [
       '-Wall',
