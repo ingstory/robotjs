@@ -50,5 +50,5 @@ script:
   - if [ "$TRAVIS_OS_NAME" = "linux" ]; then xvfb-run npm test; fi
 
 after_success:
-  - if [[ $TRAVIS_NODE_VERSION != "17" && $TRAVIS_TAG != "" ]]; then npm run prebuild -- -u $GITHUB_TOKEN; fi
+  - if [[ $TRAVIS_NODE_VERSION != "17" && $TRAVIS_NODE_VERSION != "12" && $TRAVIS_TAG != "" ]]; then npm run prebuild -- -u $GITHUB_TOKEN; fi
 
