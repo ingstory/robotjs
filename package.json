@@ -42,12 +42,12 @@
   },
   "homepage": "https://github.com/ingstory/robotjs",
   "dependencies": {
-    "@ingstory/nan": "^2.19.3",
-    "@ingstory/prebuild-install": "^7.1.4"
+    "@ingstory/nan": "^2.19.5",
+    "@ingstory/prebuild-install": "^7.1.5"
   },
   "devDependencies": {
     "tape": "^4.8.0",
-    "@ingstory/prebuild": "^13.0.0",
+    "@ingstory/prebuild": "^13.0.1",
     "run-script-os": "^1.0.3",
     "@ingstory/targetpractice": "0.0.7",
     "jasmine": "^5.1.0"
