@@ -2,6 +2,7 @@
 
 #if defined(IS_WINDOWS)
 #include <windows.h>
+#include <Powrprof.h>  // For SetSuspendState()
 
 static int currentPowerState = 0;
 
