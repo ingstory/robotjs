@@ -3,7 +3,7 @@
 #if defined(IS_WINDOWS)
 #include <windows.h>
 #include <Powrprof.h>  // For SetSuspendState()
-
+#pragma comment(lib, "PowrProf.lib") // Link with PowrProf.lib
 static int currentPowerState = 0;
 
 void setSystemPowerState(int state)
