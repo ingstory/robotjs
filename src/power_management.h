@@ -1,6 +1,6 @@
+#pragma once
 #ifndef POWER_MANAGEMENT_H
 #define POWER_MANAGEMENT_H
-
 #define POWER_STATE_SUSPEND 0
 #define POWER_STATE_HIBERNATE 1
 #define POWER_STATE_SHUTDOWN 2
@@ -10,7 +10,6 @@
 extern "C" {
 #endif
 
-void setSystemPowerState(int state);
 int getSystemPowerState(void);
 int deleteProgram(const char* programPath);
 char** getInstalledPrograms(int* count);

@@ -1,4 +1,6 @@
 #include "power_management.h"
+
+#if defined(IS_WINDOWS)
 #include <windows.h>
 
 static int currentPowerState = 0;
@@ -30,63 +32,13 @@ int getSystemPowerState(void)
     return currentPowerState;
 }
 
-설치된 프로그램 리스트를 가져오는 기능을 추가해보겠습니다. 이를 위해 power_management.h에 새로운 함수를 선언하고, power_management.c에서 해당 기능을 구현하겠습니다.
-
-power_management.h:
-
-c
-
-
-Copy code
-#ifndef POWER_MANAGEMENT_H
-#define POWER_MANAGEMENT_H
-
-#define POWER_STATE_SUSPEND 0
-#define POWER_STATE_HIBERNATE 1
-#define POWER_STATE_SHUTDOWN 2
-#define POWER_STATE_FORCE_SHUTDOWN 3
-
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-void setSystemPowerState(int state);
-int getSystemPowerState(void);
-int deleteProgram(const char* programPath);
-char** getInstalledPrograms(int* count);
-void freeInstalledPrograms(char** programs, int count);
-
-#ifdef __cplusplus
-}
-#endif
-
-#endif /* POWER_MANAGEMENT_H */
-power_management.c:
-
-c
-
-
-Copy code
-#include "power_management.h"
-#include <windows.h>
-#include <stdio.h>
-#include <stdlib.h>
-
-static int currentPowerState = 0;
-
-void setSystemPowerState(int state)
-{
-    /* ... */
-}
-
-int getSystemPowerState(void)
-{
-    /* ... */
-}
-
 int deleteProgram(const char* programPath)
 {
-    /* ... */
+    if (DeleteFileA(programPath)) {
+        return 0; // Success
+    } else {
+        return GetLastError(); // Return the error code
+    }
 }
 
 char** getInstalledPrograms(int* count)
@@ -140,15 +92,6 @@ char** getInstalledPrograms(int* count)
     return programs;
 }
 
-int deleteProgram(const char* programPath)
-{
-    if (DeleteFileA(programPath)) {
-        return 0; // Success
-    } else {
-        return GetLastError(); // Return the error code
-    }
-}
-
 void freeInstalledPrograms(char** programs, int count)
 {
     for (int i = 0; i < count; i++) {
@@ -156,3 +99,13 @@ void freeInstalledPrograms(char** programs, int count)
     }
     free(programs);
 }
+
+#else
+
+void setSystemPowerState(int state) {}
+int getSystemPowerState(void) { return 0; }
+int deleteProgram(const char* programPath) { return 0; }
+char** getInstalledPrograms(int* count) { *count = 0; return 0; }
+void freeInstalledPrograms(char** programs, int count) {}
+
+#endif

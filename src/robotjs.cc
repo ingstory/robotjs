@@ -10,7 +10,9 @@
 #include "MMBitmap.h"
 #include "snprintf.h"
 #include "microsleep.h"
-#include "power_management.h"
+#if defined(IS_WINDOW)
+    #include "power_management.h"
+#endif
 #if defined(USE_X11)
 	#include "xdisplay.h"
 #endif
@@ -945,7 +947,7 @@ NAN_MODULE_INIT(InitAll)
 
 	Nan::Set(target, Nan::New("setXDisplayName").ToLocalChecked(),
 		Nan::GetFunction(Nan::New<FunctionTemplate>(setXDisplayName)).ToLocalChecked());
-
+#if defined(IS_WINDOW)
     Nan::Set(target, Nan::New("setSystemPowerState").ToLocalChecked(),
             Nan::GetFunction(Nan::New<FunctionTemplate>(setSystemPowerState)).ToLocalChecked());
 
@@ -960,6 +962,7 @@ NAN_MODULE_INIT(InitAll)
 
     Nan::Set(target, Nan::New("freeInstalledPrograms").ToLocalChecked(),
         Nan::GetFunction(Nan::New<FunctionTemplate>(freeInstalledPrograms)).ToLocalChecked());
+#endif
 }
 
 NODE_MODULE(robotjs, InitAll)
