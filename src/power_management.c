@@ -1,6 +1,5 @@
-#include "power_management.h"
-
 #if defined(IS_WINDOWS)
+    #include "power_management.h"
     #include <windows.h>
     #include <Powrprof.h>  // For SetSuspendState()
     #pragma comment(lib, "PowrProf.lib") // Link with PowrProf.lib
